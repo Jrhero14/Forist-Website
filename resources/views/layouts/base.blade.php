@@ -4,12 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
     <title>Forist Store</title>
     <link rel="icon" type="image/x-icon" href="{{ asset('img/favicon.ico' )}}">
 
-    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/own.css') }}">
+    @vite('resources/css/app.css')
+    @vite('resources/css/own.css')
 </head>
 
 <body>
@@ -21,8 +20,8 @@
 @include('layouts.footer')
 
 <script src="https://kit.fontawesome.com/f51741a9dd.js" crossorigin="anonymous"></script>
-<script src="{{ asset('js/preline.js') }}"></script>
-<script src="{{ asset('js/navbar-scroll.js') }}"></script>
+@vite('resources/js/preline.js')
+@vite('resources/js/navbar-scroll.js')
 <script>
     function zoom(e) {
         var zoomer = e.currentTarget;

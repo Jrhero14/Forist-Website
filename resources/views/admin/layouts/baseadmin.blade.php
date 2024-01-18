@@ -8,8 +8,8 @@
     <title>Forist Store</title>
     <link rel="icon" type="image/x-icon" href="{{ asset('img/favicon.ico') }}">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/own.css') }}">
+    @vite('resources/css/app.css')
+    @vite('resources/css/own.css')
 </head>
 
 <body>
@@ -22,8 +22,8 @@
 <div class="h-96"></div>
 
 <script src="https://kit.fontawesome.com/f51741a9dd.js" crossorigin="anonymous"></script>
-<script src="{{ asset('js/preline.js') }}"></script>
-<script src="{{ asset('js/navbar-scroll.js') }}"></script>
+@vite('resources/js/preline.js')
+@vite('resources/js/navbar-scroll.js')
 @include('vendor.sweetalert.alert')
 </body>
 
