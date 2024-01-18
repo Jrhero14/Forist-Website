@@ -25,7 +25,7 @@
 <script src="https://kit.fontawesome.com/f51741a9dd.js" crossorigin="anonymous"></script>
 @vite('resources/js/preline.js')
 @vite('resources/js/navbar-scroll.js')
-@include('vendor.sweetalert.alert')
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>
 
 </html>

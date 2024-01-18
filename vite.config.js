@@ -18,6 +18,7 @@ export default defineConfig({
                 'resources/js/bootstrap.js',
                 'resources/js/navbar-scroll.js',
                 'resources/js/preline.js',
+                'resources/js/sweetalert.all.js',
             ],
             output: [
                 'dist'
