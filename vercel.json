@@ -10,12 +10,12 @@
             "dest": "/public/build/"
         },
         {
-            "src": "/resources/(.*)",
-            "dest": "/public/resources/"
+            "src": "/css/(.*)",
+            "dest": "/public/css/"
         },
         {
-            "src": "/favicon/(.*)",
-            "dest": "/public/favicon/"
+            "src": "/js/(.*)",
+            "dest": "/public/js/"
         },
         {
             "src": "/(.*)",
