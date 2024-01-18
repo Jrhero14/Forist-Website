@@ -7,7 +7,14 @@ export default defineConfig({
             input: [
                 'resources/css/app.css',
                 'resources/css/own.css',
+
+                'resources/img/bg-login.png',
+                'resources/img/favicon.ico',
+                'resources/img/logo.png',
+
+
                 'resources/js/app.js',
+                'resources/js/bootstrap.js',
                 'resources/js/navbar-scroll.js',
                 'resources/js/preline.js',
             ],
