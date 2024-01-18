@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
     <title>Forist Store</title>
-    <link rel="icon" type="image/x-icon" href="{{ Vite::asset('resources/img/favicon.ico') }}">
+    <link rel="icon" type="image/x-icon" href="/build/assets/favicon-5QpTEmFm.ico">
     @vite('resources/css/app.css')
     @vite('resources/css/own.css')
 </head>
