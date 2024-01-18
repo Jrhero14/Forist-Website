@@ -10,6 +10,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     @vite('resources/css/app.css')
     @vite('resources/css/own.css')
+    @vite('resources/js/app.js')
 </head>
 
 <body>

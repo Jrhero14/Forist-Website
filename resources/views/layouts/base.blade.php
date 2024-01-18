@@ -7,7 +7,6 @@
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
     <title>Forist Store</title>
     <link rel="icon" type="image/x-icon" href="{{ asset('img/favicon.ico' )}}">
-
     @vite('resources/css/app.css')
     @vite('resources/css/own.css')
 </head>
