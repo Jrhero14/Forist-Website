@@ -72,6 +72,8 @@ return [
 
     'timezone' => 'UTC',
 
+    'Vite' => \Illuminate\Support\Facades\Vite::class,
+
     /*
     |--------------------------------------------------------------------------
     | Application Locale Configuration
