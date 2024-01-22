@@ -6,11 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
     <title>Forist Store</title>
-    <link rel="icon" type="image/x-icon" href="/build/assets/favicon-5QpTEmFm.ico">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    @vite('resources/css/app.css')
-    @vite('resources/css/own.css')
-    @vite('resources/js/app.js')
+    <link rel="icon" type="image/x-icon" href="{{ asset('img/favicon.ico') }}">
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/own.css') }}">
 </head>
 
 <body>
@@ -23,8 +22,8 @@
 <div class="h-96"></div>
 
 <script src="https://kit.fontawesome.com/f51741a9dd.js" crossorigin="anonymous"></script>
-@vite('resources/js/preline.js')
-@vite('resources/js/navbar-scroll.js')
+<script src="{{ asset('js/preline.js') }}"></script>
+<script src="{{ asset('js/navbar-scroll.js') }}"></script>
 @if (Session::has('alert.config') || Session::has('alert.delete'))
     @if (config('sweetalert.animation.enable'))
         <link rel="stylesheet" href="{{ config('sweetalert.animatecss') }}">

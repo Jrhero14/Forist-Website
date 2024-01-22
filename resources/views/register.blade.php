@@ -7,8 +7,8 @@
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
     <title>Forist Store</title>
     <link rel="icon" type="image/x-icon" href="{{ asset('img/favicon.ico') }}">
-    @vite('resources/css/app.css')
-    @vite('resources/css/own.css')
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/own.css') }}">
 </head>
 
 <body class="bg-stone-400">
@@ -85,7 +85,7 @@
 
 
 <script src="https://kit.fontawesome.com/f51741a9dd.js" crossorigin="anonymous"></script>
-@vite('resources/js/preline.js')
+<script src="{{ asset('js/preline.js') }}"></script>
 @if (Session::has('alert.config') || Session::has('alert.delete'))
     @if (config('sweetalert.animation.enable'))
         <link rel="stylesheet" href="{{ config('sweetalert.animatecss') }}">
