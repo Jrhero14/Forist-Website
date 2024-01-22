@@ -21,7 +21,7 @@ export default defineConfig({
                 'resources/js/sweetalert.all.js',
             ],
             output: [
-                'dist'
+                'public'
             ],
             refresh: true,
         }),
