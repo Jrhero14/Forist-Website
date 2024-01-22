@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
     <title>Forist Store</title>
-    <link rel="icon" type="image/x-icon" href="{{ Vite::asset('resources/img/favicon.ico') }}">
+    <link rel="icon" type="image/x-icon" href="{{ asset('img/favicon.ico') }}">
     @vite('resources/css/app.css')
     @vite('resources/css/own.css')
 </head>
@@ -19,7 +19,7 @@
             <div
                 class="overflow-hidden bg-[url('https://asset.kompas.com/crops/--50BtRRqG5v11uJ9w8sUhNluds=/0x981:1920x2261/750x500/data/photo/2023/05/03/64521423464e5.jpg')] bg-no-repeat bg-cover">
                 <div class="w-full h-full grid items-center justify-center content-center backdrop-blur-[2px]">
-                    <img src="/build/assets/logo-gMD3eAxL.png" alt="" srcset="">
+                    <img src="{{ asset('img/logo.png') }}" alt="" srcset="">
                 </div>
             </div>
 

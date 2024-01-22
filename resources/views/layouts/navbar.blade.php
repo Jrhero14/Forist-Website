@@ -72,7 +72,7 @@
          aria-label="Global">
         <div class="flex items-center justify-between">
             <a class="flex-none text-xl font-semibold dark:text-white" href="/" aria-label="Brand"><img
-                    class="w-32" src="/build/assets/logo-gMD3eAxL.png" alt=""></a>
+                    class="w-32" src="{{ asset('img/logo.png') }}" alt=""></a>
             <div class="sm:hidden flex items-center gap-x-7">
                 <a class="relative font-semibold text-gray-500 hover:text-gray-600 text-lg sm:border-s sm:border-gray-500 pt-0.5"
                    href="#">

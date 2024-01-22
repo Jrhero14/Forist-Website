@@ -65,7 +65,7 @@
                                class="max-w-xs flex p-3 w-full bg-white border border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400">
                             <input type="checkbox"
                                    class="shrink-0 mt-0.5 border-gray-200 rounded text-blue-600 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-gray-800 dark:border-gray-700 dark:checked:bg-blue-500 dark:checked:border-blue-500 dark:focus:ring-offset-gray-800"
-                                   id="mawar" checked>
+                                   id="mawar" >
                             <span class="text-sm text-gray-500 ms-3 dark:text-gray-400">Mawar</span>
                         </label>
 
@@ -118,7 +118,7 @@
                                class="max-w-xs flex p-3 w-full bg-white border border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400">
                             <input type="checkbox"
                                    class="shrink-0 mt-0.5 border-gray-200 rounded text-blue-600 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-gray-800 dark:border-gray-700 dark:checked:bg-blue-500 dark:checked:border-blue-500 dark:focus:ring-offset-gray-800"
-                                   id="Bucket" checked>
+                                   id="Bucket" >
                             <span class="text-sm text-gray-500 ms-3 dark:text-gray-400">Bucket</span>
                         </label>
 
@@ -157,7 +157,7 @@
                                class="max-w-xs flex p-3 w-full bg-white border border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400">
                             <input type="checkbox"
                                    class="shrink-0 mt-0.5 border-gray-200 rounded text-blue-600 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-gray-800 dark:border-gray-700 dark:checked:bg-blue-500 dark:checked:border-blue-500 dark:focus:ring-offset-gray-800"
-                                   id="Romantis" checked>
+                                   id="Romantis" >
                             <span class="text-sm text-gray-500 ms-3 dark:text-gray-400">Romantis</span>
                         </label>
 
@@ -233,497 +233,46 @@
             <div class="col-span-5 lg:col-span-4">
                 <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 justify-center items-center">
 
-                    <!-- Produk Card -->
-                    <div class="group flex w-full flex-col overflow-hidden shadow-lg rounded-lg">
-                        <a class="relative flex h-40 lg:h-80 overflow-hidden" href="/detail-product/wef232">
-                            <img class="absolute top-0 right-0 h-full w-full object-cover group-hover:scale-110 transition-transform duration-500 ease-in-out"
-                                 src="https://www.delovery.com/images/produk/pink-sunshine-bekasi-PINKSUNSHINEBEKASI-16947694610.webp"
-                                 alt="product image" />
-                            <div
-                                class="absolute -right-16 bottom-0 mr-2 mb-4 space-y-2 transition-all duration-300 group-hover:right-0">
-                                <button
-                                    class="flex h-10 w-10 items-center justify-center bg-gray-900 text-white transition hover:bg-gray-700">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20"
-                                         fill="currentColor">
-                                        <path fill-rule="evenodd"
-                                              d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z"
-                                              clip-rule="evenodd" />
-                                    </svg>
-                                </button>
-                                <button
-                                    class="flex h-10 w-10 pl-2 items-center justify-center bg-gray-900 text-white transition hover:bg-gray-700">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="mr-2 h-5 w-5"
-                                         viewBox="0 0 20 20" fill="currentColor">
-                                        <path
-                                            d="M3 1a1 1 0 000 2h1.22l.305 1.222a.997.997 0 00.01.042l1.358 5.43-.893.892C3.74 11.846 4.632 14 6.414 14H15a1 1 0 000-2H6.414l1-1H14a1 1 0 00.894-.553l3-6A1 1 0 0017 3H6.28l-.31-1.243A1 1 0 005 1H3zM16 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM6.5 18a1.5 1.5 0 100-3 1.5 1.5 0 000 3z" />
-                                    </svg>
-                                </button>
-                            </div>
-                        </a>
-                        <div class="py-3 bg-stone-300">
-                            <a href="#">
-                                <h5 class="text-center tracking-tight text-gray-500 font-bold text-sm px-3">Pink Sunshine -
-                                    Bekasi</h5>
+                    @foreach($products as $product)
+                        <!-- Produk Card -->
+                        <div class="group flex w-full flex-col overflow-hidden shadow-lg rounded-lg">
+                            <a class="relative flex h-40 lg:h-80 overflow-hidden" href="/detail-product/{{ $product->id }}">
+                                <img class="absolute top-0 right-0 h-full w-full object-cover group-hover:scale-110 transition-transform duration-500 ease-in-out"
+                                     src="{{ $product->photourl }}"
+                                     alt="product image" />
+                                <div
+                                    class="absolute -right-16 bottom-0 mr-2 mb-4 space-y-2 transition-all duration-300 group-hover:right-0">
+                                    <button
+                                        class="flex h-10 w-10 items-center justify-center bg-gray-900 text-white transition hover:bg-gray-700">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20"
+                                             fill="currentColor">
+                                            <path fill-rule="evenodd"
+                                                  d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z"
+                                                  clip-rule="evenodd" />
+                                        </svg>
+                                    </button>
+                                    <button
+                                        class="flex h-10 w-10 pl-2 items-center justify-center bg-gray-900 text-white transition hover:bg-gray-700">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="mr-2 h-5 w-5"
+                                             viewBox="0 0 20 20" fill="currentColor">
+                                            <path
+                                                d="M3 1a1 1 0 000 2h1.22l.305 1.222a.997.997 0 00.01.042l1.358 5.43-.893.892C3.74 11.846 4.632 14 6.414 14H15a1 1 0 000-2H6.414l1-1H14a1 1 0 00.894-.553l3-6A1 1 0 0017 3H6.28l-.31-1.243A1 1 0 005 1H3zM16 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM6.5 18a1.5 1.5 0 100-3 1.5 1.5 0 000 3z" />
+                                        </svg>
+                                    </button>
+                                </div>
                             </a>
-                            <div class="flex justify-center text-center">
-                                <p>
-                                    <span class="font-bold text-gray-900">Rp 399.000</span><br>
-                                    <span class="text-xs text-gray-700 line-through">Rp 499.000</span>
-                                </p>
+                            <div class="py-3 bg-stone-300">
+                                <a href="#">
+                                    <h5 class="text-center tracking-tight text-gray-500 font-bold text-sm px-3">{{ $product->judul }}</h5>
+                                </a>
+                                <div class="flex justify-center">
+                                    <p>
+                                        <span class="font-bold text-gray-900">Rp {{ number_format($product->harga, '0', ',') }}</span>
+                                    </p>
+                                </div>
                             </div>
                         </div>
-                    </div>
-
-                    <!-- Produk Card -->
-                    <div class="group flex w-full flex-col overflow-hidden shadow-lg rounded-lg">
-                        <a class="relative flex h-40 lg:h-80 overflow-hidden" href="/detail-product/">
-                            <img class="absolute top-0 right-0 h-full w-full object-cover group-hover:scale-110 transition-transform duration-500 ease-in-out"
-                                 src="https://www.delovery.com/images/produk/pink-sunshine-bekasi-PINKSUNSHINEBEKASI-16947694610.webp"
-                                 alt="product image" />
-                            <div
-                                class="absolute -right-16 bottom-0 mr-2 mb-4 space-y-2 transition-all duration-300 group-hover:right-0">
-                                <button
-                                    class="flex h-10 w-10 items-center justify-center bg-gray-900 text-white transition hover:bg-gray-700">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20"
-                                         fill="currentColor">
-                                        <path fill-rule="evenodd"
-                                              d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z"
-                                              clip-rule="evenodd" />
-                                    </svg>
-                                </button>
-                                <button
-                                    class="flex h-10 w-10 pl-2 items-center justify-center bg-gray-900 text-white transition hover:bg-gray-700">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="mr-2 h-5 w-5"
-                                         viewBox="0 0 20 20" fill="currentColor">
-                                        <path
-                                            d="M3 1a1 1 0 000 2h1.22l.305 1.222a.997.997 0 00.01.042l1.358 5.43-.893.892C3.74 11.846 4.632 14 6.414 14H15a1 1 0 000-2H6.414l1-1H14a1 1 0 00.894-.553l3-6A1 1 0 0017 3H6.28l-.31-1.243A1 1 0 005 1H3zM16 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM6.5 18a1.5 1.5 0 100-3 1.5 1.5 0 000 3z" />
-                                    </svg>
-                                </button>
-                            </div>
-                        </a>
-                        <div class="py-3 bg-stone-300">
-                            <a href="#">
-                                <h5 class="text-center tracking-tight text-gray-500 font-bold text-sm px-3">Pink Sunshine -
-                                    Bekasi</h5>
-                            </a>
-                            <div class="flex justify-center text-center">
-                                <p>
-                                    <span class="font-bold text-gray-900">Rp 399.000</span><br>
-                                    <span class="text-xs text-gray-700 line-through">Rp 499.000</span>
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Produk Card -->
-                    <div class="group flex w-full flex-col overflow-hidden shadow-lg rounded-lg">
-                        <a class="relative flex h-40 lg:h-80 overflow-hidden" href="/detail-product">
-                            <img class="absolute top-0 right-0 h-full w-full object-cover group-hover:scale-110 transition-transform duration-500 ease-in-out"
-                                 src="https://www.delovery.com/images/produk/pink-sunshine-bekasi-PINKSUNSHINEBEKASI-16947694610.webp"
-                                 alt="product image" />
-                            <div
-                                class="absolute -right-16 bottom-0 mr-2 mb-4 space-y-2 transition-all duration-300 group-hover:right-0">
-                                <button
-                                    class="flex h-10 w-10 items-center justify-center bg-gray-900 text-white transition hover:bg-gray-700">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20"
-                                         fill="currentColor">
-                                        <path fill-rule="evenodd"
-                                              d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z"
-                                              clip-rule="evenodd" />
-                                    </svg>
-                                </button>
-                                <button
-                                    class="flex h-10 w-10 pl-2 items-center justify-center bg-gray-900 text-white transition hover:bg-gray-700">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="mr-2 h-5 w-5"
-                                         viewBox="0 0 20 20" fill="currentColor">
-                                        <path
-                                            d="M3 1a1 1 0 000 2h1.22l.305 1.222a.997.997 0 00.01.042l1.358 5.43-.893.892C3.74 11.846 4.632 14 6.414 14H15a1 1 0 000-2H6.414l1-1H14a1 1 0 00.894-.553l3-6A1 1 0 0017 3H6.28l-.31-1.243A1 1 0 005 1H3zM16 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM6.5 18a1.5 1.5 0 100-3 1.5 1.5 0 000 3z" />
-                                    </svg>
-                                </button>
-                            </div>
-                        </a>
-                        <div class="py-3 bg-stone-300">
-                            <a href="#">
-                                <h5 class="text-center tracking-tight text-gray-500 font-bold text-sm px-3">Pink Sunshine -
-                                    Bekasi</h5>
-                            </a>
-                            <div class="flex justify-center text-center">
-                                <p>
-                                    <span class="font-bold text-gray-900">Rp 399.000</span><br>
-                                    <span class="text-xs text-gray-700 line-through">Rp 499.000</span>
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Produk Card -->
-                    <div class="group flex w-full flex-col overflow-hidden shadow-lg rounded-lg">
-                        <a class="relative flex h-40 lg:h-80 overflow-hidden" href="/detail-product">
-                            <img class="absolute top-0 right-0 h-full w-full object-cover group-hover:scale-110 transition-transform duration-500 ease-in-out"
-                                 src="https://www.delovery.com/images/produk/pink-sunshine-bekasi-PINKSUNSHINEBEKASI-16947694610.webp"
-                                 alt="product image" />
-                            <div
-                                class="absolute -right-16 bottom-0 mr-2 mb-4 space-y-2 transition-all duration-300 group-hover:right-0">
-                                <button
-                                    class="flex h-10 w-10 items-center justify-center bg-gray-900 text-white transition hover:bg-gray-700">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20"
-                                         fill="currentColor">
-                                        <path fill-rule="evenodd"
-                                              d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z"
-                                              clip-rule="evenodd" />
-                                    </svg>
-                                </button>
-                                <button
-                                    class="flex h-10 w-10 pl-2 items-center justify-center bg-gray-900 text-white transition hover:bg-gray-700">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="mr-2 h-5 w-5"
-                                         viewBox="0 0 20 20" fill="currentColor">
-                                        <path
-                                            d="M3 1a1 1 0 000 2h1.22l.305 1.222a.997.997 0 00.01.042l1.358 5.43-.893.892C3.74 11.846 4.632 14 6.414 14H15a1 1 0 000-2H6.414l1-1H14a1 1 0 00.894-.553l3-6A1 1 0 0017 3H6.28l-.31-1.243A1 1 0 005 1H3zM16 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM6.5 18a1.5 1.5 0 100-3 1.5 1.5 0 000 3z" />
-                                    </svg>
-                                </button>
-                            </div>
-                        </a>
-                        <div class="py-3 bg-stone-300">
-                            <a href="#">
-                                <h5 class="text-center tracking-tight text-gray-500 font-bold text-sm px-3">Pink Sunshine -
-                                    Bekasi</h5>
-                            </a>
-                            <div class="flex justify-center text-center">
-                                <p>
-                                    <span class="font-bold text-gray-900">Rp 399.000</span><br>
-                                    <span class="text-xs text-gray-700 line-through">Rp 499.000</span>
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Produk Card -->
-                    <div class="group flex w-full flex-col overflow-hidden shadow-lg rounded-lg">
-                        <a class="relative flex h-40 lg:h-80 overflow-hidden" href="/detail-product">
-                            <img class="absolute top-0 right-0 h-full w-full object-cover group-hover:scale-110 transition-transform duration-500 ease-in-out"
-                                 src="https://www.delovery.com/images/produk/pink-sunshine-bekasi-PINKSUNSHINEBEKASI-16947694610.webp"
-                                 alt="product image" />
-                            <div
-                                class="absolute -right-16 bottom-0 mr-2 mb-4 space-y-2 transition-all duration-300 group-hover:right-0">
-                                <button
-                                    class="flex h-10 w-10 items-center justify-center bg-gray-900 text-white transition hover:bg-gray-700">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20"
-                                         fill="currentColor">
-                                        <path fill-rule="evenodd"
-                                              d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z"
-                                              clip-rule="evenodd" />
-                                    </svg>
-                                </button>
-                                <button
-                                    class="flex h-10 w-10 pl-2 items-center justify-center bg-gray-900 text-white transition hover:bg-gray-700">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="mr-2 h-5 w-5"
-                                         viewBox="0 0 20 20" fill="currentColor">
-                                        <path
-                                            d="M3 1a1 1 0 000 2h1.22l.305 1.222a.997.997 0 00.01.042l1.358 5.43-.893.892C3.74 11.846 4.632 14 6.414 14H15a1 1 0 000-2H6.414l1-1H14a1 1 0 00.894-.553l3-6A1 1 0 0017 3H6.28l-.31-1.243A1 1 0 005 1H3zM16 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM6.5 18a1.5 1.5 0 100-3 1.5 1.5 0 000 3z" />
-                                    </svg>
-                                </button>
-                            </div>
-                        </a>
-                        <div class="py-3 bg-stone-300">
-                            <a href="#">
-                                <h5 class="text-center tracking-tight text-gray-500 font-bold text-sm px-3">Pink Sunshine -
-                                    Bekasi</h5>
-                            </a>
-                            <div class="flex justify-center text-center">
-                                <p>
-                                    <span class="font-bold text-gray-900">Rp 399.000</span><br>
-                                    <span class="text-xs text-gray-700 line-through">Rp 499.000</span>
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Produk Card -->
-                    <div class="group flex w-full flex-col overflow-hidden shadow-lg rounded-lg">
-                        <a class="relative flex h-40 lg:h-80 overflow-hidden" href="/detail-product">
-                            <img class="absolute top-0 right-0 h-full w-full object-cover group-hover:scale-110 transition-transform duration-500 ease-in-out"
-                                 src="https://www.delovery.com/images/produk/pink-sunshine-bekasi-PINKSUNSHINEBEKASI-16947694610.webp"
-                                 alt="product image" />
-                            <div
-                                class="absolute -right-16 bottom-0 mr-2 mb-4 space-y-2 transition-all duration-300 group-hover:right-0">
-                                <button
-                                    class="flex h-10 w-10 items-center justify-center bg-gray-900 text-white transition hover:bg-gray-700">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20"
-                                         fill="currentColor">
-                                        <path fill-rule="evenodd"
-                                              d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z"
-                                              clip-rule="evenodd" />
-                                    </svg>
-                                </button>
-                                <button
-                                    class="flex h-10 w-10 pl-2 items-center justify-center bg-gray-900 text-white transition hover:bg-gray-700">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="mr-2 h-5 w-5"
-                                         viewBox="0 0 20 20" fill="currentColor">
-                                        <path
-                                            d="M3 1a1 1 0 000 2h1.22l.305 1.222a.997.997 0 00.01.042l1.358 5.43-.893.892C3.74 11.846 4.632 14 6.414 14H15a1 1 0 000-2H6.414l1-1H14a1 1 0 00.894-.553l3-6A1 1 0 0017 3H6.28l-.31-1.243A1 1 0 005 1H3zM16 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM6.5 18a1.5 1.5 0 100-3 1.5 1.5 0 000 3z" />
-                                    </svg>
-                                </button>
-                            </div>
-                        </a>
-                        <div class="py-3 bg-stone-300">
-                            <a href="#">
-                                <h5 class="text-center tracking-tight text-gray-500 font-bold text-sm px-3">Pink Sunshine -
-                                    Bekasi</h5>
-                            </a>
-                            <div class="flex justify-center text-center">
-                                <p>
-                                    <span class="font-bold text-gray-900">Rp 399.000</span><br>
-                                    <span class="text-xs text-gray-700 line-through">Rp 499.000</span>
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Produk Card -->
-                    <div class="group flex w-full flex-col overflow-hidden shadow-lg rounded-lg">
-                        <a class="relative flex h-40 lg:h-80 overflow-hidden" href="/detail-product">
-                            <img class="absolute top-0 right-0 h-full w-full object-cover group-hover:scale-110 transition-transform duration-500 ease-in-out"
-                                 src="https://www.delovery.com/images/produk/pink-sunshine-bekasi-PINKSUNSHINEBEKASI-16947694610.webp"
-                                 alt="product image" />
-                            <div
-                                class="absolute -right-16 bottom-0 mr-2 mb-4 space-y-2 transition-all duration-300 group-hover:right-0">
-                                <button
-                                    class="flex h-10 w-10 items-center justify-center bg-gray-900 text-white transition hover:bg-gray-700">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20"
-                                         fill="currentColor">
-                                        <path fill-rule="evenodd"
-                                              d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z"
-                                              clip-rule="evenodd" />
-                                    </svg>
-                                </button>
-                                <button
-                                    class="flex h-10 w-10 pl-2 items-center justify-center bg-gray-900 text-white transition hover:bg-gray-700">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="mr-2 h-5 w-5"
-                                         viewBox="0 0 20 20" fill="currentColor">
-                                        <path
-                                            d="M3 1a1 1 0 000 2h1.22l.305 1.222a.997.997 0 00.01.042l1.358 5.43-.893.892C3.74 11.846 4.632 14 6.414 14H15a1 1 0 000-2H6.414l1-1H14a1 1 0 00.894-.553l3-6A1 1 0 0017 3H6.28l-.31-1.243A1 1 0 005 1H3zM16 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM6.5 18a1.5 1.5 0 100-3 1.5 1.5 0 000 3z" />
-                                    </svg>
-                                </button>
-                            </div>
-                        </a>
-                        <div class="py-3 bg-stone-300">
-                            <a href="#">
-                                <h5 class="text-center tracking-tight text-gray-500 font-bold text-sm px-3">Pink Sunshine -
-                                    Bekasi</h5>
-                            </a>
-                            <div class="flex justify-center text-center">
-                                <p>
-                                    <span class="font-bold text-gray-900">Rp 399.000</span><br>
-                                    <span class="text-xs text-gray-700 line-through">Rp 499.000</span>
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Produk Card -->
-                    <div class="group flex w-full flex-col overflow-hidden shadow-lg rounded-lg">
-                        <a class="relative flex h-40 lg:h-80 overflow-hidden" href="/detail-product">
-                            <img class="absolute top-0 right-0 h-full w-full object-cover group-hover:scale-110 transition-transform duration-500 ease-in-out"
-                                 src="https://www.delovery.com/images/produk/pink-sunshine-bekasi-PINKSUNSHINEBEKASI-16947694610.webp"
-                                 alt="product image" />
-                            <div
-                                class="absolute -right-16 bottom-0 mr-2 mb-4 space-y-2 transition-all duration-300 group-hover:right-0">
-                                <button
-                                    class="flex h-10 w-10 items-center justify-center bg-gray-900 text-white transition hover:bg-gray-700">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20"
-                                         fill="currentColor">
-                                        <path fill-rule="evenodd"
-                                              d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z"
-                                              clip-rule="evenodd" />
-                                    </svg>
-                                </button>
-                                <button
-                                    class="flex h-10 w-10 pl-2 items-center justify-center bg-gray-900 text-white transition hover:bg-gray-700">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="mr-2 h-5 w-5"
-                                         viewBox="0 0 20 20" fill="currentColor">
-                                        <path
-                                            d="M3 1a1 1 0 000 2h1.22l.305 1.222a.997.997 0 00.01.042l1.358 5.43-.893.892C3.74 11.846 4.632 14 6.414 14H15a1 1 0 000-2H6.414l1-1H14a1 1 0 00.894-.553l3-6A1 1 0 0017 3H6.28l-.31-1.243A1 1 0 005 1H3zM16 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM6.5 18a1.5 1.5 0 100-3 1.5 1.5 0 000 3z" />
-                                    </svg>
-                                </button>
-                            </div>
-                        </a>
-                        <div class="py-3 bg-stone-300">
-                            <a href="#">
-                                <h5 class="text-center tracking-tight text-gray-500 font-bold text-sm px-3">Pink Sunshine -
-                                    Bekasi</h5>
-                            </a>
-                            <div class="flex justify-center text-center">
-                                <p>
-                                    <span class="font-bold text-gray-900">Rp 399.000</span><br>
-                                    <span class="text-xs text-gray-700 line-through">Rp 499.000</span>
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Produk Card -->
-                    <div class="group flex w-full flex-col overflow-hidden shadow-lg rounded-lg">
-                        <a class="relative flex h-40 lg:h-80 overflow-hidden" href="/detail-product">
-                            <img class="absolute top-0 right-0 h-full w-full object-cover group-hover:scale-110 transition-transform duration-500 ease-in-out"
-                                 src="https://www.delovery.com/images/produk/pink-sunshine-bekasi-PINKSUNSHINEBEKASI-16947694610.webp"
-                                 alt="product image" />
-                            <div
-                                class="absolute -right-16 bottom-0 mr-2 mb-4 space-y-2 transition-all duration-300 group-hover:right-0">
-                                <button
-                                    class="flex h-10 w-10 items-center justify-center bg-gray-900 text-white transition hover:bg-gray-700">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20"
-                                         fill="currentColor">
-                                        <path fill-rule="evenodd"
-                                              d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z"
-                                              clip-rule="evenodd" />
-                                    </svg>
-                                </button>
-                                <button
-                                    class="flex h-10 w-10 pl-2 items-center justify-center bg-gray-900 text-white transition hover:bg-gray-700">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="mr-2 h-5 w-5"
-                                         viewBox="0 0 20 20" fill="currentColor">
-                                        <path
-                                            d="M3 1a1 1 0 000 2h1.22l.305 1.222a.997.997 0 00.01.042l1.358 5.43-.893.892C3.74 11.846 4.632 14 6.414 14H15a1 1 0 000-2H6.414l1-1H14a1 1 0 00.894-.553l3-6A1 1 0 0017 3H6.28l-.31-1.243A1 1 0 005 1H3zM16 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM6.5 18a1.5 1.5 0 100-3 1.5 1.5 0 000 3z" />
-                                    </svg>
-                                </button>
-                            </div>
-                        </a>
-                        <div class="py-3 bg-stone-300">
-                            <a href="#">
-                                <h5 class="text-center tracking-tight text-gray-500 font-bold text-sm px-3">Pink Sunshine -
-                                    Bekasi</h5>
-                            </a>
-                            <div class="flex justify-center text-center">
-                                <p>
-                                    <span class="font-bold text-gray-900">Rp 399.000</span><br>
-                                    <span class="text-xs text-gray-700 line-through">Rp 499.000</span>
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Produk Card -->
-                    <div class="group flex w-full flex-col overflow-hidden shadow-lg rounded-lg">
-                        <a class="relative flex h-40 lg:h-80 overflow-hidden" href="/detail-product">
-                            <img class="absolute top-0 right-0 h-full w-full object-cover group-hover:scale-110 transition-transform duration-500 ease-in-out"
-                                 src="https://www.delovery.com/images/produk/pink-sunshine-bekasi-PINKSUNSHINEBEKASI-16947694610.webp"
-                                 alt="product image" />
-                            <div
-                                class="absolute -right-16 bottom-0 mr-2 mb-4 space-y-2 transition-all duration-300 group-hover:right-0">
-                                <button
-                                    class="flex h-10 w-10 items-center justify-center bg-gray-900 text-white transition hover:bg-gray-700">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20"
-                                         fill="currentColor">
-                                        <path fill-rule="evenodd"
-                                              d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z"
-                                              clip-rule="evenodd" />
-                                    </svg>
-                                </button>
-                                <button
-                                    class="flex h-10 w-10 pl-2 items-center justify-center bg-gray-900 text-white transition hover:bg-gray-700">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="mr-2 h-5 w-5"
-                                         viewBox="0 0 20 20" fill="currentColor">
-                                        <path
-                                            d="M3 1a1 1 0 000 2h1.22l.305 1.222a.997.997 0 00.01.042l1.358 5.43-.893.892C3.74 11.846 4.632 14 6.414 14H15a1 1 0 000-2H6.414l1-1H14a1 1 0 00.894-.553l3-6A1 1 0 0017 3H6.28l-.31-1.243A1 1 0 005 1H3zM16 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM6.5 18a1.5 1.5 0 100-3 1.5 1.5 0 000 3z" />
-                                    </svg>
-                                </button>
-                            </div>
-                        </a>
-                        <div class="py-3 bg-stone-300">
-                            <a href="#">
-                                <h5 class="text-center tracking-tight text-gray-500 font-bold text-sm px-3">Pink Sunshine -
-                                    Bekasi</h5>
-                            </a>
-                            <div class="flex justify-center text-center">
-                                <p>
-                                    <span class="font-bold text-gray-900">Rp 399.000</span><br>
-                                    <span class="text-xs text-gray-700 line-through">Rp 499.000</span>
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Produk Card -->
-                    <div class="group flex w-full flex-col overflow-hidden shadow-lg rounded-lg">
-                        <a class="relative flex h-40 lg:h-80 overflow-hidden" href="/detail-product">
-                            <img class="absolute top-0 right-0 h-full w-full object-cover group-hover:scale-110 transition-transform duration-500 ease-in-out"
-                                 src="https://www.delovery.com/images/produk/pink-sunshine-bekasi-PINKSUNSHINEBEKASI-16947694610.webp"
-                                 alt="product image" />
-                            <div
-                                class="absolute -right-16 bottom-0 mr-2 mb-4 space-y-2 transition-all duration-300 group-hover:right-0">
-                                <button
-                                    class="flex h-10 w-10 items-center justify-center bg-gray-900 text-white transition hover:bg-gray-700">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20"
-                                         fill="currentColor">
-                                        <path fill-rule="evenodd"
-                                              d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z"
-                                              clip-rule="evenodd" />
-                                    </svg>
-                                </button>
-                                <button
-                                    class="flex h-10 w-10 pl-2 items-center justify-center bg-gray-900 text-white transition hover:bg-gray-700">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="mr-2 h-5 w-5"
-                                         viewBox="0 0 20 20" fill="currentColor">
-                                        <path
-                                            d="M3 1a1 1 0 000 2h1.22l.305 1.222a.997.997 0 00.01.042l1.358 5.43-.893.892C3.74 11.846 4.632 14 6.414 14H15a1 1 0 000-2H6.414l1-1H14a1 1 0 00.894-.553l3-6A1 1 0 0017 3H6.28l-.31-1.243A1 1 0 005 1H3zM16 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM6.5 18a1.5 1.5 0 100-3 1.5 1.5 0 000 3z" />
-                                    </svg>
-                                </button>
-                            </div>
-                        </a>
-                        <div class="py-3 bg-stone-300">
-                            <a href="#">
-                                <h5 class="text-center tracking-tight text-gray-500 font-bold text-sm px-3">Pink Sunshine -
-                                    Bekasi</h5>
-                            </a>
-                            <div class="flex justify-center text-center">
-                                <p>
-                                    <span class="font-bold text-gray-900">Rp 399.000</span><br>
-                                    <span class="text-xs text-gray-700 line-through">Rp 499.000</span>
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Produk Card -->
-                    <div class="group flex w-full flex-col overflow-hidden shadow-lg rounded-lg">
-                        <a class="relative flex h-40 lg:h-80 overflow-hidden" href="/detail-product">
-                            <img class="absolute top-0 right-0 h-full w-full object-cover group-hover:scale-110 transition-transform duration-500 ease-in-out"
-                                 src="https://www.delovery.com/images/produk/pink-sunshine-bekasi-PINKSUNSHINEBEKASI-16947694610.webp"
-                                 alt="product image" />
-                            <div
-                                class="absolute -right-16 bottom-0 mr-2 mb-4 space-y-2 transition-all duration-300 group-hover:right-0">
-                                <button
-                                    class="flex h-10 w-10 items-center justify-center bg-gray-900 text-white transition hover:bg-gray-700">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20"
-                                         fill="currentColor">
-                                        <path fill-rule="evenodd"
-                                              d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z"
-                                              clip-rule="evenodd" />
-                                    </svg>
-                                </button>
-                                <button
-                                    class="flex h-10 w-10 pl-2 items-center justify-center bg-gray-900 text-white transition hover:bg-gray-700">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="mr-2 h-5 w-5"
-                                         viewBox="0 0 20 20" fill="currentColor">
-                                        <path
-                                            d="M3 1a1 1 0 000 2h1.22l.305 1.222a.997.997 0 00.01.042l1.358 5.43-.893.892C3.74 11.846 4.632 14 6.414 14H15a1 1 0 000-2H6.414l1-1H14a1 1 0 00.894-.553l3-6A1 1 0 0017 3H6.28l-.31-1.243A1 1 0 005 1H3zM16 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM6.5 18a1.5 1.5 0 100-3 1.5 1.5 0 000 3z" />
-                                    </svg>
-                                </button>
-                            </div>
-                        </a>
-                        <div class="py-3 bg-stone-300">
-                            <a href="#">
-                                <h5 class="text-center tracking-tight text-gray-500 font-bold text-sm px-3">Pink Sunshine -
-                                    Bekasi</h5>
-                            </a>
-                            <div class="flex justify-center text-center">
-                                <p>
-                                    <span class="font-bold text-gray-900">Rp 399.000</span><br>
-                                    <span class="text-xs text-gray-700 line-through">Rp 499.000</span>
-                                </p>
-                            </div>
-                        </div>
-                    </div>
+                    @endforeach
 
                 </div>
             </div>

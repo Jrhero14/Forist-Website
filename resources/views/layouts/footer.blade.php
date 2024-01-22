@@ -5,7 +5,7 @@
         <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-6 mb-10">
             <div class="col-span-full hidden lg:col-span-2 lg:block">
                 <a class="flex-none text-xl font-semibold dark:text-white dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
-                   href="#" aria-label="Brand"><img class="w-48" src="/build/assets/logo-gMD3eAxL.png" alt="" srcset=""></a>
+                   href="#" aria-label="Brand"><img class="w-48" src="{{ asset('img/logo.png') }}" alt="" srcset=""></a>
                 <p class="mt-3 text-xs sm:text-sm text-gray-600 dark:text-gray-400">Florist Store adalah
                     partner Anda dalam berbagai kebutuhan bunga. Florits Store adalah toko bunga terbaik di
                     Bali.</p>
