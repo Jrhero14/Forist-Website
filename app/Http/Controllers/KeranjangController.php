@@ -15,7 +15,12 @@ use RealRashid\SweetAlert\Facades\Alert;
 class KeranjangController extends Controller
 {
     public function keranjangView(Request $request){
-        $products = Cart::with('Product')->where('user_id', '=', auth()->user()->id)->get();
+        if(auth()->user()){
+            $products = Cart::with('Product')->where('user_id', '=', auth()->user()->id)->get();
+        }
+        else{
+            return redirect('/login');
+        }
 
         $subtotal = 0;
         $ongkir = 0;
