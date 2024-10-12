@@ -34,6 +34,7 @@
         "APP_ENV": "production",
         "APP_DEBUG": "true",
         "APP_URL": "https://forist-website.vercel.app/",
+        "APP_KEY": "base64:fuffrEEiJiL1ZOlQGIRMXt543Iw5B4trWFzCtmnvHF4=",
 
         "APP_CONFIG_CACHE": "/tmp/config.php",
         "APP_EVENTS_CACHE": "/tmp/events.php",
