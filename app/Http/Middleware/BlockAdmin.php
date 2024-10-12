@@ -15,16 +15,14 @@ class BlockAdmin
      */
     public function handle(Request $request, Closure $next): Response
     {
-        {
-            if (auth()->check()){
-                if (auth()->user()->admin){
-                    return redirect('/admin/dashboard');
-                }
-                else{
-                    return $next($request);
-                }
+        if (auth()->check()){
+            if (auth()->user()->admin){
+                return redirect('/admin/dashboard');
             }
-            return $next($request);
+            else{
+                return $next($request);
+            }
         }
+        return $next($request);
     }
 }

@@ -10,7 +10,7 @@ class HomeController extends Controller
 {
     public function homeView(){
         $contexts = [
-            'produkUnggulan' => Product::where('status', '=', true)->take(4)->get()
+            'produkUnggulan' => Product::query()->where('status', '=', true)->inRandomOrder()->limit(4)->get()
         ];
         return view(view: 'index', data: $contexts);
     }
